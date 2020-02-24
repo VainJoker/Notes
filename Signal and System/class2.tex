@@ -1,7 +1,8 @@
 \documentclass{article}
 \usepackage{ctex}
+\usepackage{fancybox}
 
-\title{<++>}
+\title{系统}
 % \author{张汉杰}
 \author{Vainjoker}
 \date{\today}
@@ -11,48 +12,51 @@
 \begin{document}
     \maketitle
     \newpage
-    \section{系统}%
-    \subsection{概念}%
-    \subsubsection{由单位组成}%
-    \subsubsection{单元间按一定规则连接}%
-    \subsubsection{体现出特定功能}%
-    \subsection{分类}%
-    \subsubsection{连续/离散}%
+    \section{概念}%
+    \subsection{由单位组成}%
+    \subsection{单元间按一定规则连接}%
+    \subsection{体现出特定功能}%
+    \section{分类}%
+    \subsection{连续/离散}%
     取决于输入信号的连续或离散
-    \subsubsection{及时/动态}%
+    \subsection{及时/动态}%
+    记忆系统/无记忆系统
     当前输入决定当前输出/由过去和当前输入共同决定当前输出
-    \subsubsection{线性/非线性}%
+    \subsection{线性/非线性}%
     描述系统的微分差分方程中各组成部分均为一次向不出现平方项或高次项 为线性方程
 
         线性=齐次性+叠加性
 
         输入+历史储能
 
-        齐次性=
+        \[
         \begin{cases}
-        $f(t)\to y(t)$,
-        $af(t)\to ay(t)$
+        f(t)\to y(t),
+        af(t)\to ay(t)
         \end{cases}
+        \]
 
         叠加性=
+        \[
         \begin{cases}
-        $f_1(t)\to y_{1}(t)$,
-        $f_2(t)\to y_{2}(t)$,
-        $f_1(t)+f_2(t)\to y_1(t)+y_{2}(t)$
+        f_1(t)\to y_{1}(t),
+        f_2(t)\to y_{2}(t),
+        f_1(t)+f_2(t)\to y_1(t)+y_{2}(t)
         \end{cases}
+        \] 
 
-    \subsubsection{时变/非时变}%
+    \subsection{时变/非时变}%
     输出信号随时间改变
 
     描述系统的微分差分方程中各组成激励响应部分均为常数项,则为时不变系统,前提其中 $y(t),f(t)$ 不存在平移或反转
 
-    \subsubsection{因果/非因果}%
+    \section{因果/非因果}%
     因果:先有激励后有响应
-    \subsubsection{稳定/非稳定}%
+    \subsection{稳定/非稳定}%
     输入有界输出有界/输入有界输出无界
 
-    \subsection{如何分析}%
-    \subsubsection{系统建模}%
+    \section{如何分析}%
+    \subsection{系统建模}%
     LTI连续$\Longrightarrow$常系数线性微分
 
     直接  -->  直接求解微分差分方程
@@ -66,9 +70,26 @@
     合成所有分量响应
 
     LTI离散$\Longrightarrow$常系数线性差分
-    \subsubsection*{求解系统}%
-    根据$f(t)$求$y(t)$
-    \subsubsection{通过分析$f(t),y(t)$关系,获得系统特性}%
+    \subsection{求解系统}%
+    根据$f(t)$,求$y(t)$
+    \subsection{通过分析$f(t),y(t)$关系,获得系统特性}%
+
+    \section{基本模块}%
+    
+    积分器
+    $x(t)\longrightarrow\doublebox{$\int$}\longrightarrow\int_{-\infty}^{t}x_1(\tau)d\tau$
+
+    加法器
+    $x_1(t),x_2(t)\longrightarrow\ovalbox{$\sum$}\longrightarrow x_1(t)+x_2(t)$
+
+    标量乘法器
+    $x(t)$--->$ax(t)$
+
+    延时器
+    $x(t)\longrightarrow\doublebox{$T$}\longrightarrow x(t-k)$ 
+
+    用于离散
+    $x(k)\longrightarrow\doublebox{$D$}\longrightarrow x(k-1)$ 
 
     
 
