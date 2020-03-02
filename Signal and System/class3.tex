@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{ctex}
 
-\title{<++>}
+\title{系统分析}
 % \author{张汉杰}
 \author{Vainjoker}
 \date{\today}
@@ -17,18 +17,24 @@
     \subsection{经典解法}%
     $y(t)=y_n(t)+y_p(t)$
 
-    齐次解+特解
+    完全解=齐次解+特解
 
-    齐次解为形如$e^{t\lambda} $的线性组合
+    齐次解为形如$e^{t\lambda} $的线性组合,是对应齐次微分方程的解:
 
-    特解取决于激励信号%
+    特征根为单实根齐次解$Ce^{t\lambda}$
+
+    特征根为二重实根齐次解$(C_1t+C_0)e^{t\lambda}$
+
+    特征根为一对共轭复根$(C\cos(\beta t)+D\sin(\beta t))e^{\alpha t}$
+
+    特解取决于激励信号
+
+    {未完待续}
+
     \subsection{奇异函数平衡法}%
 
     分析$y^(n)(t)$中包含的奇异函数判断$0_-$到$0_+$的连续性
 
     对微分方程从$0_-$到$0_+$做定积分求取$y^(n)(0_+)$
-
-
-    
 
 \end{document}

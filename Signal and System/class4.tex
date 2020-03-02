@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{ctex}
+
+\title{<++>}
+% \author{张汉杰}
+\author{Vainjoker}
+\date{\today}
+
+\setCJKmainfont{WenQuanYiZenHei}
+
+\begin{document}
+    \maketitle
+    \newpage
+    
+    \section{系统的初始值}%
+
+        初始值：是n阶系统在t=0时接入激励，其响应在t=0时刻的值
+
+        初始状态：是系统在激励尚未接触t=0时刻的响应值，反映系统的历史情况
+        微分方程等号右端有$\delta(t)$时仅在等号左端$y(t)$的最高阶导数中含有$\delta(t)$
+
+        
+        由系统的概念
+
+        获得系统的描述方法（框图，方程，框图和方程之间的相互转化）
+
+        根据方程求解系统（齐次解+特解）
+
+        为求解方程需要初始值（通过系数匹配）解出初始值
+
+    \section{零输入响应}%
+    $y_{x}(t)=y_{zi}(t)$由状态$x$产生的
+    
+    \subsection{初始值的确定}%
+
+    $y(0_-)=y_{zi}(0_-)=y_{x}(0_-)$
+
+    $y(0_+)=y_{zi}(0_+)+y_{zs}(0_+)$
+
+    零输入响应对应齐次微分方程,故不存在跃变
+
+    即: 
+
+    $y_{zi}(0_+)=y_{zi}(0_-)+=y(0_-)$
+    
+    \subsection{求解步骤}%
+        \subsubsection{设定齐次解}%
+        \subsubsection{代入初始值,求待定系数}%
+    
+    \section{零状态响应}% 
+    $y_{f}(t)=y_{zs}(t)$由输入$f$产生的
+
+    \subsection{初始值的确定}%
+
+    $y(0_-)=y_{zs}(0_-)=0$
+
+    由系数匹配法,从$y_{zs}(0_-)=0$求$y_{zs}(0_+)$
+
+    先求$y_{zi}(0_+)$再求$y_{zs}(0_+)=y_(0_+)-y_{zi}(0_+)$
+
+    \subsection{求解步骤}%
+        \subsubsection{设定齐次解}%
+        \subsubsection{设定特解,代入方程求解}%
+        \subsubsection{代入初始值,求待定系数}%
+
+    \section{全响应}%
+
+    $y(t)=y_x(t)+y_f(t)$
+    
+
+\end{document}
