@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{ctex}
+
+\title{卷积积分}
+% \author{张汉杰}
+\author{Vainjoker}
+\date{\today}
+
+\setCJKmainfont{WenQuanYiZenHei}
+
+\begin{document}
+    \maketitle
+    \newpage
+
+    \section{信号的时域分解}%
+    已知 $f(t)$ 构造
+    $\hat{f}(t)=\sum\limits_{n=-\infty}^{\infty}f(n\Delta)\Delta p(t-n\Delta)$,
+    
+    $\lim\limits_{\Delta \to 0 }\hat{f}(t)=\int_{-\infty}^{\infty}f(\tau)\delta (t-\tau)d\tau=f(t)*\delta(t)$
+
+    \section{卷积积分}%
+    定义在R上的两个函数$f_1(t),f_2(t)$则
+
+    $f(t)=f_1(t)*f_2(t)=\int_{-\infty}^{\infty}f_1(\tau)f_2(t-\tau)d\tau$
+    \subsection{卷积过程}%
+    1.换元:$t\to\tau$
+
+    2.反转平移: $f_2(\tau) \to f_2(-\tau) \to f_2(t-\tau)$
+
+    3.乘积
+
+    4.积分
+
+    \section{卷积积分的图解法}%
+
+    略
+    
+
+\end{document}

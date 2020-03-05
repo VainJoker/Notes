@@ -22,11 +22,48 @@
     $h(0_-)=h'(0_-)=0$ (对二阶系统)
 
     \subsection{求解方法}%
-    
+    $y''(t)+a_1y'(t)+a_0y(t)=b_2f''(t)+b_1f'(t)+b_0f(t)$
+
+    分两步进行选取新变量 $h_1(t)$ 使他满足
+
+    $h_1''(t)+a_1h_1'(t)+a_0h_1(t)=\delta(t)$
+    采用经典法求解$h_1(t)$根据LTI系统零状态响应和线性性质和微分特性,则冲激响应:
+
+    $h(t)=b_2h_1''(t)+b_1h_1'(t)+b_0h_1(t)$
 
 
     \section{阶跃响应}%
-    阶跃响应是单位阶跃函数 引起的
+    阶跃响应是单位阶跃函数$\epsilon(t)$引起的零状态响应记为$g(t)$
+
+
+    $g(t)$ 隐含条件:
+
+    $f(t)=\epsilon (t)$
+
+    $g(0_-)=g'(0_-)=0$ (对二阶系统)
+
+    \subsection{求解方法}%
+
+    \subsubsection{方法一}%
     
+    $y''(t)+a_1y'(t)+a_0y(t)=b_2f''(t)+b_1f'(t)+b_0f(t)$
+    
+    分两步进行选取新变量 $g_1(t)$ 使他满足
+
+    $g_1''(t)+a_1g_1'(t)+a_0g_1(t)=\delta(t)$
+    采用经典法求解$g_1(t)$根据LTI系统零状态响应和线性性质和微分特性,则j阶跃响应:
+
+    $g(t)=b_2g_1''(t)+b_1g_1'(t)+b_0g_1(t)$
+
+    \subsubsection{方法二}%
+    利用单位阶跃函数和单位冲激函数的关系
+
+    $\delta(t)=\int^{t}_{-\infty}\delta(\tau)d\tau$,
+    $\delta(t)=\frac{d\epsilon(t)}{dt}$
+
+    故:
+    $g(t)= \int_{-\infty}^t\delta(\tau)d\tau$,
+    $h(t)=\frac{dg(t)}{dt}$
+
 
 \end{document}
