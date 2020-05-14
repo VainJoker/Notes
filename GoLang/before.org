@@ -1,0 +1,151 @@
+* 入门
+
+** 从HelloWorld开始
+    #+BEGIN_SRC go
+    package main
+    import "fmt"
+    func main(){
+    fmt.Println("Hello World")
+    }
+    #+END_SRC
+
+#+RESULTS:
+: Hello World
+
+go是编译型语言
+go build 编译 ./执行
+go run 编译并运行
+
+原生支持unicode所以可以处理任何国家的语言
+
+Go代码是使用包来组织的，一个包由一个或多个.go文件组成
+
+Go语言不需要分号结尾，除非有多个语句或声明在同一行
+
+** 命令行参数
+   注释以//开头，编译器会忽视他们
+   #+begin_src go
+   package main
+   import (
+   "fmt"
+   "os" //os包提供一些函数和变量，以与平台无关的方式和操作系统打交道
+   )
+   func main(){
+	var s,sep string
+	for i := 1;i<len(os.Args);i++ {
+	    s += sep + os.Args[i]
+	    sep = " "
+	}   
+	fmt.Println(s)
+   }
+
+   #+end_src
+
+   #+RESULTS:
+   
+   #+begin_src go
+   package main //第二版，比较不同
+   import (
+   "fmt"
+   "os"
+   )
+   func main(){
+    s, sep := "",""
+	for _,arg := range os.Args[1:] {
+	    s += sep + arg
+	    sep = " "
+	}
+    fmt.Println(s)
+   }
+
+   #+end_src
+   
+   #+RESULTS:
+
+** 找出重复行
+#+BEGIN_SRC go
+package main
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+func main() {
+	counts := make(map[string]int)
+	input := bufio.NewScanner(os.Stdin)
+	for input.Scan(){
+		counts[input.Text()]++
+	}
+	for line, n := range counts {
+		if n > 1 {
+			fmt.Printf("%d\t%s\n",n,line)
+		}
+	}
+}
+#+END_SRC
+
+#+RESULTS:
+
+** gif 动画
+#+BEGIN_SRC go
+package main
+
+import(
+	"image"
+	"image/color"
+	"image/gif"
+	"io"
+	"math"
+	"math/rand"
+	"os"
+)
+
+var palette = []color.Color{color.White,color.Black}
+
+const (
+	whiteIndex = 0
+	blackIndex = 1
+)
+
+func main() {
+	rand.Seed(time.Now().UTC().UnixNano())
+	if len(os.Args) > 1 && os.Args[1] == "web"{
+		handler := func(w http.ResponseWriter, r *http.Request){
+			lissajous(w)
+		}
+		http.HandleFunc("/",handler)
+		log.Fatal(http.ListenAndServe("localhost:8000",nil))
+		retrun
+	}
+	lissajous(os.Stdout)
+}
+
+func lissajous(out io.Writer) {
+	const (
+		cycles = 5
+		res = 0.001
+		size = 100
+		nframes =64
+		delay = 8
+	)
+	freq := rand.Float64() * 3.0
+	anim := gif.GIF{LoopCount: nframes}
+	phase := 0.0
+	for i := 0; i<nframes;i++{
+		rect := image.Rect(0,0,2*size+1)
+		img := image.NewPaletted(rect,palette)
+		for t := 0.0; t<cycles*2*math.Pi;t += res {
+			x := math.Sin(t)
+			y := math.Sin(t*freq + phase)
+			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5)),
+				blackIndex)
+		}
+	phase += 0.1
+	anim.Delay = append(anim.Delay,delay)
+	anim.Image = append(anim.Image,img)
+	}
+gif.EncodeAll(out,&anim)
+}
+#+END_SRC
+
+#+RESULTS:

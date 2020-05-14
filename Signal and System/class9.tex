@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{ctex}
+
+\title{相关函数}
+% \author{张汉杰}
+\author{Vainjoker}
+\date{\today}
+
+\setCJKmainfont{WenQuanYiZenHei}
+
+\begin{document}
+    \maketitle
+    \newpage
+   
+    \section{互相关和自相关函数的定义}
+    
+    \subsection{互相关}
+    $R_{12}(\tau)=\int_{-\infty}{\infty}f_1(t)f_2(t-\tau)dt$
+
+    $R_{21}(\tau)=\int_{-\infty}{\infty}f_2(t)f_1(t-\tau)dt$
+
+
+    一般：$R_{12}(\tau)!=R_{21}(\tau),R_{12}(\tau)=R_{21}(-\tau)$
+    
+    \subsection{自相关}
+    $R(\tau)=\int_{-\infty}^{\infty}f(t)f(t-\tau)dt$
+
+    $R(\tau)=R(-\tau)$
+
+    \section{相关与卷积}
+
+    $f_1(t)*f_2(t)=\int_{-\infty}^{\infty}f_1{\tau}f(t-\tau)d\tau$
+
+
+
+
+\end{document}

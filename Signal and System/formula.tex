@@ -1,25 +1,38 @@
 \documentclass{article}
-\usepackage{ctex}
+% \usepackage{ctex}
 
 \title{FORMULA}
 % \author{张汉杰}
 \author{Vainjoker}
 \date{\today}
 
-\setCJKmainfont{WenQuanYiZenHei}
-
 \begin{document}
     \maketitle
     \newpage
     
-    电阻: $U(R)=Ri(t)$
+    $U(R)=Ri(t)$
 
-    电容: $U_c(t)=\frac{1}{c}\int_{-\infty}^{t}_{c}(\tau)d\tau$
+    $U_c(t)=\frac{1}{c}\int^t_{-\infty}(\tau)d\tau$
 
     $i_{c}(t)=C\frac{dU_{c}(t)}{dt}$
 
-    电感: $i_{L}(t)=\frac{1}{L}\int _{-\infty}^{t}U_{L}(\tau)d\tau$
+    $i_{L}(t)=\frac{1}{L}\int _{-\infty}^{t}U_{L}(\tau)d\tau$
 
     $U_{L}(t)=L\frac{di_{L}(t)}{dt}$
+
+    $K*f(t)=K[S(f(t))]$
+
+    $f(t)*\delta(t)=f(t)$
+
+    $f(t)*\delta'(t)=f'(t)*\delta^(-1)(t)=f^{-1}(t)*\delta(t)=f^{-1}(t)$
+
+    $f(t)*\epsilon(t)=f(t)*\delta^{-1}(t)=f^{-1}(t)*\delta(t)=f^{-1}(t)$
+
+    $\epsilon(t)*\epsilon(t)=t\epsilon(t)$
+
+    $e^{-at}\epsilon(t)*e^{-at}\epsilon(t)=te^{-at}\epsilon(t)$
+
+    $e{-a_1t}\epsilon(t)*e^{a_2t}\epsilon(t)=(e^{-a_1t}-e^{-a_2t})(\epsilon(t))/(a_2-a_1)$
+
 
 \end{document}

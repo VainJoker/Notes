@@ -1,0 +1,98 @@
+#+TITLE: First
+* 名称
+  字母或下划线开头
+  区分大小写
+  首字母大小写决定是否跨包，大写可导出
+  包名本身小写字母构成
+  通常使用驼峰式命名法
+* 声明
+  给一个程序实体命名，并设定其部分或全部属性。
+  变量，常量，类型，函数
+  #+Begin_SRC go
+  package main 
+  import "fmt"
+  const boilingF = 212.0
+  func main() {
+	  var f = boilingF
+	  var c = (f - 32) * 5/9
+	  fmt.Printf("boiling point = %g or %g \n",f,c)
+  }
+
+  #+END_SRC
+
+  #+RESULTS:
+  : boiling point = 212 or 100
+
+  #+BEGIN_SRC go
+  package main
+  import "fmt"
+  func main() {
+	  const freezingF,boilingF = 32.0,212.0
+	  fmt.Printf("%g = %g \n",freezingF,fToC(freezingF))
+	  fmt.Printf("%g = %g \n",boilingF,fToC(boilingF))
+  }
+  func fToC(f float64) float64 {
+	  return (f - 32) * 5 /9 
+  }
+  #+END_SRC
+
+  #+RESULTS:
+  : 32 = 0 
+  : 212 = 100
+* 变量
+  var name type = expression
+  类型和表达式可以省略一个，不能同时省略
+  短变量声明使用 :=  
+  指针的值是变量的地址使用&
+  #+BEGIN_SRC go
+  package main 
+  import (
+  "flag"
+  "fmt"
+  "strings"
+  )
+  var n = flag.Bool("n",false,"omit trailing newline")
+  var sep = flag.String("s"," ","separator")
+  
+func main(){
+  flag.Parse()
+  fmt.Print(strings.Join(flag.Args(),*sep))
+  if !*n {
+  fmt.Println()
+  }
+  }
+  
+  #+END_SRC
+
+  #+RESULTS:
+  new函数，返回值为地址
+  #+BEGIN_SRC go :imports "fmt"
+    p := new(int)
+    q := new(int)
+    fmt.Println(q == p)
+  #+END_SRC
+
+  #+RESULTS:
+  : false
+  变量的生命周期：变量一直年生存到它变的不可访问，这时它占用的存储空间被回收
+* 赋值
+  赋值语句用来更新变量的值，符号=
+** 多重赋值
+   它允许几个变量一次性被赋值           
+
+* 类型声明 
+  变量或表达式的类型定义这些值的特性
+  type声明定义一个新命名类型
+
+* 包和文件
+  与其他语言中库或模块类似，
+  通过控制变量可见性和导出情况来隐藏信息
+  每一个文件的开头用package声明定义包的名称
+
+* 导入 
+  导入声明可以给导入的包定义一个短名字
+
+* 包初始化
+
+* 作用域
+

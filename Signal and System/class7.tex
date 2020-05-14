@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{ctex}
 
-\title{<++>}
+\title{卷积积分}
 % \author{张汉杰}
 \author{Vainjoker}
 \date{\today}
@@ -11,6 +11,44 @@
 \begin{document}
     \maketitle
     \newpage
+    \section{卷积积分性质}
+    \subsection{乘法三律}
+
+    交换律：$f_1(t)*f_2(t)=f_2(t)*f_1(t)$
+
+    分配律：$f_1(t)*[f_2(t)+f_3(t)]=f_2(t)*f_1(t)+f_3(t)*f_1(t)$
+
+    结合律：$[f_1(t)*f_2(t)]*f_3(t)=f_1(t)*[f_2(t)*f_3(t)]$
     
+    \subsection{复合系统的冲激响应}
+    并联
+    $h(t)=h_1(t)+h_2(t)$
+
+    级联
+    $h(t)=h_1(t)*h_2(t)=h_2(t)*h_1(t)$
+
+    \section{奇异函数的卷积特性}
+
+    $f(t)*\delta(t)=\delta(t)*f(t)=f(t)$
+
+    $f(t)*\delta(t-t_0)=\delta(t-t_0)*f(t)=f(t-t_0)$
+
+    $f(t)*h'(t)=f'(t)$
+
+    \section{卷积的微积分性质}
+
+    两个函数卷积的导数等于一个函数导数乘另一个函数的卷积
+
+    两个函数卷积的积分等于一个函数卷积乘另一个函数的卷积
+
+    $f_1(t)*f_2(t)=f_1'(t)*f_{2}^{-1}(t)$
+    条件：$f_1'(-\infty)=0$ or $f_{2}^{-1}(-\infty)$
+
+    \section{卷积的时移特性}
+    $f(t)=f_1(t)*f_2(t)$
+
+    $f_1(t-t_1)*f_2(t-t_2)=f_1(t-t_1-t_2)*f_2(t)=f(t-t_1-t_2)$
+    
+
 
 \end{document}

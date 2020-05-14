@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{ctex}
+
+\title{傅里叶变换}
+% \author{张汉杰}
+\author{Vainjoker}
+\date{\today}
+
+\setCJKmainfont{WenQuanYiZenHei}
+
+\begin{document}
+    \maketitle
+    \newpage
+
+
+\section{傅里叶变换}
+
+周期信号的频谱取极限得到的非周期信号频谱连续幅度无限小
+
+$F(j\omega)=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}dt$
+   
+称$F(j\omega)$为f(t)de 傅里叶变换
+$F(j\omega)$一般为复函数写为$F(j\omega)=|F(j\omega)|e^{j\omega \phi}$
+
+\section{傅里叶反变换}
+
+$f(t)=frac{1}{2\pi}\int_{-\infty}^{\infty}F(j\omega)e^{j\omega t} d\omega$
+
+\section{性质}
+
+\subsection{线性}
+
+
+$f_1(t)<->F_1(j/omega)$
+
+$f_2(t)<->F_2(j/omega)$
+
+$af_1(t)+bf_2(t)<->aF_1(j/omega)+bF_2(j/omega)$
+
+\subsection{奇偶性}
+
+若$f(t)$为偶$F(j/omega)$实偶
+
+若$f(t)$为奇$F(j/omega)$虚奇
+
+\subsection{对称性}
+
+$f(t)<->F(j/omega)$
+
+$f(jt)<->2\pi F(-omega)$
+
+\subsection{尺度变换}
+
+$f(at)<->frac{1}{|a|}F(frac{j/omega}{a})$
+
+\subsection{时移}
+
+$f(t+t_0)<->F(j/omega)e^{+/-j/omega t_0}$
+
+\subsection{频移}
+
+$f(t)e^j/omega t<->F(j/omega - \omega_0)$
+
+\subsection{卷积性质}
+
+$f_1(t)*f_2(t)<->F_1(j/omega)F_2(j/omega)$
+
+$f_1(t)f_2(t)<->frac{1}{a\pi}F_1(j/omega)F_2(j/omega)$
+
+\subsection{时域微积分}
+
+$f'(t)=f'(t)*\delta(t)=f(t)*\delta'(t)<-->F(j/omega)(j\omega)$
+
+$f^n(t)<-->F(j/omega)(j\omega)^n$
+
+$f^{-1}(t)=f^{-1}(t)*\delta(t)=f(t)*\sigma(t)<-->F(j/omega)[\pi \delta(\omega)+frac{1}{(j\omega)}](j\omega)$
+
+\section{周期信号的傅里叶变换}
+
+$f(t)=/sum_{-\infty}^{\infty}F_ne^{j/omega t}$
+
+$f(t)<-->2\pi /sum_{-\infty}^{\infty} F_n\delta(/omega-n/omega)$
+
+已知$F_n$就得到指数展开式周期信号当作单个脉冲与周期性冲击序列的卷积
+\end{document}

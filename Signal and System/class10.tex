@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{ctex}
+
+\title{信号的正交函数集分率}
+% \author{张汉杰}
+\author{Vainjoker}
+\date{\today}
+
+\setCJKmainfont{WenQuanYiZenHei}
+
+\begin{document}
+    \maketitle
+    \newpage
+
+    \section{正交}
+
+    $\int_{t_1}^{t_2}\varphi_1(t)\varphi_2(t)=0$
+    $\varphi_1(t),\varphi_2(t)$在[t1,t2]正交
+
+    \subsection{正交函数集}
+
+\subsection{完备的正交函数集}
+
+对于给定的正交函数集，不能找到之外的函数$\phi(t)$满足正交关系
+
+\subsection{三角函数集}
+
+[0，T]所有余弦，所有正弦 函数
+
+
+$\int_{0}^{T}\cos(m\omega t)\cos(n\omega t)dt=frac{1}{2}\int_{0}^{T}[\cos(m+n)\omega t+\cos(m-n)\omega t]dt=\frac{1}{2}frac{sin(m+n)\omega t}{(m+n)\omega}$
+
+\subsection{三角傅里叶级数}
+
+以三角函数对周期信号进行分解-->三角傅里叶级数
+
+频率代表单位时间内信号波形的变换次数
+
+$a_n=frac{2}{T}\int_{-frac{T}{2}}^{frac{T}{2}}f(t)\cos\omega tdt$
+
+$b_n=frac{2}{T}\int_{-frac{T}{2}}^{frac{T}{2}}f(t)\sin\omega tdt$
+
+$f(t)$为偶函数$b_n=0$
+
+$f(t)$为奇函数$a_n=0$
+
+$f(t)$为偶谐函数f(t)前半周期和后半周期波形相同
+
+$f(t)$为奇谐函数f(t)前半周期和后半周期波形关于横轴对称
+
+\subsection{信号的频域构成}
+频谱
+
+振幅相位
+
+
+
+   
+
+\end{document}
