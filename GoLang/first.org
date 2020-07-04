@@ -83,16 +83,49 @@ func main(){
 * 类型声明 
   变量或表达式的类型定义这些值的特性
   type声明定义一个新命名类型
+  #+begin_src go :imports "fmt"
+  type Celsius float64
+  type Fahrenheit float64
+  const (
+  AbosutezeroC Celsius = -237.15
+  FreezingC Celsius = 0
+  BoilingC Celsius = 100
+  )
+  func CToF(c Celsius) Fahrenheit {return Fahrenheit(c*9/5+32)}
+  func FToC(f Fahrenheit) Celsius {return Celsius((f-32)*5/9)}
+  func main() {
+	var c Celsius
+	fmt.Println(CToF(c))
+	f := 234
+	fmt.Println(FToC(Fahrenheit(f)))
+}
+  #+end_src
+
+  #+RESULTS:
+  : 32
+  : 112.22222222222223
 
 * 包和文件
   与其他语言中库或模块类似，
   通过控制变量可见性和导出情况来隐藏信息
   每一个文件的开头用package声明定义包的名称
-
 * 导入 
   导入声明可以给导入的包定义一个短名字
 
 * 包初始化
+  根据依赖顺序进行
 
 * 作用域
+  用到声明时声明名字的代码段
+  编译时的属性
+  #+begin_src go :imports "fmt"
+    x := "hello"
+    for _ , x := range x {
+	    x := x + 'A' - 'a'
+	    fmt.Printf("%c",x)
+    }
+  #+end_src
 
+  #+RESULTS:
+  : HELLO
+  
